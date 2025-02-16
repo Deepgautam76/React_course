@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste react</title>
+  </head>
+  <body>
+    <div id="root">
+       <div id="container">
+        <h1 id="heading1">hello</h1>
+        <h2 id="heading2"> hello kamal</h2>
+       </div>
+    </div>
+  <!-- <script >
+    // create a html element by using javaScript
+     const heading=document.createElement("h1");
+     heading.innerHTML="Namste javaScript by kamal"
+
+     const root=document.getElementById("root");
+     console.log(root)
+     root.appendChild(heading)
+
+
+</script> -->
+
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+
+  <!-- ////////////////////////// -->
+  <!-- <script>
+    //creating a single html element by using the React.createElement
+    const heading=React.createElement("h1",
+    {
+        id:"title",
+        name:"value",
+        className:"heading",
+        style:{
+            color:"red",
+            backgroundColor:"gray"
+        }
+    },
+    "Namaste react by kamal");
+    console.log(heading)
+    //creating a root and get that element those you
+    //want to render react element
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    //passing a react element inside the root
+    //and render that element
+    root.render(heading)
+  </script>  -->
+
+  <!-- ///////////////////////////// -->
+ <script>
+    // Creating multiple element by using React.createElement
+    const heading1=React.createElement("h1",
+    {
+        id:"title",
+        key:1
+    },
+    "heading 1");
+    const heading2=React.createElement("h2",
+    {
+        id:"title",
+        key:2
+    },
+    "heading 2");
+    const container=React.createElement("div",
+    {
+        id:"container"
+    },
+    [heading1,heading2]);
+    console.log(container)
+    const root=ReactDOM.createRoot(document.getElementById("container"));
+    root.render(container);
+  </script>
+  </body>
+</html>
