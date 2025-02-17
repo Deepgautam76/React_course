@@ -1,0 +1,31 @@
+{
+  "name": "lecture2",
+  "version": "1.0.0",
+  "description": "React app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepgautam76/React_course.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Kamal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepgautam76/React_course/issues"
+  },
+  "homepage": "https://github.com/Deepgautam76/React_course#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "lecture2": "file:",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
