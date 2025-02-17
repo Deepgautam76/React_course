@@ -9,3 +9,12 @@
 - Minification
 - Bundling
 - Comprassing
+- Consistent Hashing
+- Code  Splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree Sheking - remove unused code
+- Defferent dev and prod bundles
+-
