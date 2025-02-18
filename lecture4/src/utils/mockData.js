@@ -1,11 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-
-import "./index.css";
-
 // Data of the cart
-const data = [
+const mockData = [
   {
     card: {
       card: {
@@ -845,88 +839,4 @@ const data = [
   },
 ];
 
-// Header component of app
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/10/12/4f9dc5bb-b355-429c-8b6a-b783dfd91987_b70156d6-7ab2-4c99-9a39-344554628363.jpg"
-          alt="Logo image"
-        />
-      </div>
-      <div className="nav-items">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </div>
-    </div>
-  );
-};
-
-// This is the card component
-const RestaurantCart = (prop) => {
-  const {
-    cloudinaryImageId,
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    deliveryTime,
-  } = prop?.cardData?.info;
-  return (
-    <div className="restaurent-card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" +
-          cloudinaryImageId
-        }
-        alt="Food Image"
-        className="restaurant-image"
-      />
-      <h3>{name}</h3>
-      <h3>{cuisines.join(",")}</h3>
-      <h4>{avgRating} </h4>
-      <h4>{costForTwo}</h4>
-      <h4>{deliveryTime} </h4>
-    </div>
-  );
-};
-
-// Body component of the app
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">
-        <input 
-        type="text" 
-        placeholder="Search here food or reataurant" />
-        <span>Enter food or restaurant name </span>
-      </div>
-      <div className="res-container">
-        {data.map((item) => (
-          <RestaurantCart
-            key={item.card.card.info.id}
-            cardData={item.card.card}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-
-// Main component
-const App = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-
-const root = ReactDOM.createRoot(document.getElementById("container"));
-root.render(<App />);
+export default mockData;
