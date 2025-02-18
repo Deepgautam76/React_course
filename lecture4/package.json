@@ -1,0 +1,33 @@
+{
+  "name": "lecture4",
+  "version": "1.0.0",
+  "description": "react fundamental",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepgautam76/React_course.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Kamal deep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepgautam76/React_course/issues"
+  },
+  "homepage": "https://github.com/Deepgautam76/React_course#readme",
+  "dependencies": {
+    "lecture4": "file:",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  }
+}
