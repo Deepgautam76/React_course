@@ -39,7 +39,6 @@
     align-items: center;
     padding: 1rem;
     margin: 1rem;
-    border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     background-color: #fff;
@@ -47,9 +46,9 @@
 }
 .restaurent-card:hover{
     box-shadow: 1px 2px 10px rgba(13, 21, 130, 0.594);
-    background-color: rgba(141, 142, 142, 0.253);
+    background-color: rgba(230, 234, 234, 0.048);
     cursor: pointer;
-    scale: 1.2;
+    scale: 0.95;
 }
 
 .restaurant-image{
@@ -89,4 +88,30 @@
 .search > span{
     font-family: 'Courier New', Courier, monospace;
     font-weight:bolder
+}
+.filter-btn{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.filter-btn:hover{
+    scale: 0.9;
+}
+
+/* Restaurant blank card */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.blank-restaurent-card{
+    border-radius: 10px;
+    margin: 1rem;
+    background-color: #d8d1d18f;
+    height: 20rem;
+    width: 17rem;
 }
