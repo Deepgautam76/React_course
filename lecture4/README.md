@@ -43,3 +43,9 @@ import "Component" from "path";
 
 export const "Component Name or Varivable name"
 import {Component} from "path"
+
+# React Hooks
+- They are Normal JS Utility function (Written by facebook developer)
+
+- 1- useState()
+- 2- useEffect()
