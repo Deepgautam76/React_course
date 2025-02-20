@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import RestaurantCart from "../components/RestaurantCart";
 import Data from "../utils/mockData";
 import Shimmerui from "./Shimmerui";
+import { SWIGGY_API } from "../api/dataApi";
 
 const Body = () => {
-  // Local State Variable - Super powerful variable
-  const [reataurantData, setRestaurantData] = useState([]);
+  //Local state variable
+  const [restaurantData, setRestaurantData] = useState([]);
+  const [filterRestaurant, setFilterRestaurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   // Use Effiect render after the page render
   // Im using this first render the page then call the API for dynamic data
@@ -14,39 +17,36 @@ const Body = () => {
     fetchData();
   }, []);
 
-  // //Swigy API data
+  // Fetch Swigqy API dynamic data
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65200&lng=77.16630&restaurantId=1012175&catalog_qa=undefined&submitAction=ENTER"
-      );
+      const response = await fetch(SWIGGY_API);
       const Data = await response.json();
-      const resCarts = Data?.data?.cards;
-      console.log(resCarts);
-      // setRestaurantData(resCarts);
+      const restaurantCarts = Data?.data?.cards;
+      const [card1, card2, card3, ...resCards] = restaurantCarts;
+      console.log(resCards);
+      setRestaurantData(resCards);
+      setFilterRestaurant(resCards);
     } catch (error) {
       console.log("Error encounter:" + error);
     }
   };
 
-  /**
-   * Filter the data based on the rating
-   */
+  // Filter data based on the rating
   const filterData = () => {
-    const fil = reataurantData.filter(
+    const fil = restaurantData.filter(
       (res) => res.card.card.info.avgRating > 4.1
     );
-    setRestaurantData(fil);
+    setFilterRestaurant(fil);
   };
 
-  /**
-   * Reset the filter data
-   */
-  const resetFilter = () => {
-    setRestaurantData(Data);
+  // Reset filter
+  const reset = () => {
+    setFilterRestaurant(restaurantData);
+    console.log("reset clicked");
   };
 
-  return reataurantData.length === 0 ? (
+  return restaurantData.length === 0 ? (
     <Shimmerui />
   ) : (
     <div className="body">
@@ -54,14 +54,41 @@ const Body = () => {
         <button className="filter-btn" onClick={filterData}>
           Filter Top reataurent
         </button>
-        <button className="filter-btn" onClick={resetFilter}>
+        <button className="filter-btn" onClick={reset}>
           Reset filter
         </button>
-        <input type="text" placeholder="Search here food or reataurant" />
+        <input
+          type="text"
+          className="search-input"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          placeholder="Search here food or reataurant"
+        />
+        <button
+          className="search-btn"
+          onClick={() => {
+            //Filter the restaurant crad based on the search text entered
+            //SearchText is the state which is holding the value of the search input
+            //Here I am filtering the data based on the search text
+            const filterRestaurantData = restaurantData.filter((res) =>
+              res.card.card.info.name
+                .toLowerCase()
+                .includes(searchText.toLowerCase())
+            );
+            console.log("filterRestaurantData :-", filterRestaurantData);
+            if (filterRestaurantData.length != 0) {
+              // setRestaurantData(filterRestaurantData);
+              setFilterRestaurant(filterRestaurantData);
+            }
+            setSearchText("");
+          }}
+        >
+          Search
+        </button>
         <span>Enter food or restaurant name </span>
       </div>
       <div className="res-container">
-        {reataurantData.map((item) => (
+        {filterRestaurant.map((item) => (
           <RestaurantCart
             key={item?.card?.card?.info?.id}
             cardData={item?.card?.card}
