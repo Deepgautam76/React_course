@@ -30,6 +30,12 @@
     margin: 2px;
     padding: 10px;
 }
+.login-btn{
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(22, 22, 177, 0.553);
+}
 
 /* Css for reataurant cart */
 .restaurent-card{
@@ -89,6 +95,13 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight:bolder
 }
+.search-btn{
+    margin: 10px;
+    padding:10px;
+    border-radius: 15px;
+    background: #00000036;
+    color: rgb(47, 24, 177);
+}
 .filter-btn{
     margin: 5px;
     padding: 5px;
@@ -101,6 +114,14 @@
 
 /* Restaurant blank card */
 .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.card-container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
