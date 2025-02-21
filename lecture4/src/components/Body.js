@@ -77,7 +77,6 @@ const Body = () => {
             );
             console.log("filterRestaurantData :-", filterRestaurantData);
             if (filterRestaurantData.length != 0) {
-              // setRestaurantData(filterRestaurantData);
               setFilterRestaurant(filterRestaurantData);
             }
             setSearchText("");

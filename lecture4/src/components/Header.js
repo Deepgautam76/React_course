@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../utils/constant";
 
 import React, { useState } from "react";
+import { NavLink } from "react-router";
 
 const Header = () => {
   const [Login, setLogin] = useState("Login");
@@ -10,14 +11,24 @@ const Header = () => {
         <img src={LOGO_URL} alt="Logo image" />
       </div>
       <div className="nav-items">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          {" "}
+          <NavLink to="/contect">Contect</NavLink>
+        </li>
         <li>Cart</li>
-        <button className="login-btn" onClick={() => {
-          Login === "Login" ? setLogin("Logout") : setLogin("Login");
-          console.log("Login button clicked: "+Login);
-        }}>
+        <button
+          className="login-btn"
+          onClick={() => {
+            Login === "Login" ? setLogin("Logout") : setLogin("Login");
+            console.log("Login button clicked: " + Login);
+          }}
+        >
           {Login}
         </button>
       </div>
