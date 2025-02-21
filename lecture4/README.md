@@ -49,3 +49,9 @@ import {Component} from "path"
 
 - 1- useState()
 - 2- useEffect()
+
+# Routing in web apps
+- Client Side Routing
+   (We are not featching any page outside application)
+- Server Side Routing
+   ( We are fetching the page outside the appliction like api call)
