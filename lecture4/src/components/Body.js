@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
+
 
 import RestaurantCart from "../components/RestaurantCart";
-import Data from "../utils/mockData";
 import Shimmerui from "./Shimmerui";
-import { SWIGGY_API } from "../api/dataApi";
+import { SWIGGY_API } from "../utils/constant";
 
 const Body = () => {
   //Local state variable
@@ -75,7 +76,7 @@ const Body = () => {
                 .toLowerCase()
                 .includes(searchText.toLowerCase())
             );
-            console.log("filterRestaurantData :-", filterRestaurantData);
+            // console.log("filterRestaurantData :-", filterRestaurantData);
             if (filterRestaurantData.length != 0) {
               setFilterRestaurant(filterRestaurantData);
             }
@@ -88,10 +89,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterRestaurant.map((item) => (
-          <RestaurantCart
+          <NavLink
             key={item?.card?.card?.info?.id}
-            cardData={item?.card?.card}
-          />
+            to={`/restaurant/${item?.card?.card?.info?.id}`}
+          >
+            <RestaurantCart cardData={item?.card?.card} />
+          </NavLink>
         ))}
       </div>
     </div>
