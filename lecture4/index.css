@@ -1,5 +1,5 @@
 /* Css for the header */
-.header{
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,28 +9,43 @@
     border-radius: 20px;
     padding: 1rem;
 }
-.logo-container{
+
+.logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-container > img{
-   height: 4rem;
-   width: 4rem;
-   border-radius: 15px;
+
+.logo-container>img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 15px;
 }
-.nav-items{
+
+.nav-items {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
     list-style: none;
 }
-.nav-items > li{
+
+.nav-items>li {
+    text-decoration: none;
     margin: 2px;
     padding: 10px;
 }
-.login-btn{
+
+.nav-items li a {
+    text-decoration: none;
+    color: black;
+}
+.nav-items li a:hover {
+    background: #5e9e897a;
+    color: rgb(47, 24, 177);
+}
+
+.login-btn {
     padding: 5px 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -38,7 +53,7 @@
 }
 
 /* Css for reataurant cart */
-.restaurent-card{
+.restaurent-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,18 +61,18 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     width: 300px;
 }
-.restaurent-card:hover{
+.restaurent-card:hover {
     box-shadow: 1px 2px 10px rgba(13, 21, 130, 0.594);
     background-color: rgba(230, 234, 234, 0.048);
     cursor: pointer;
     scale: 0.95;
 }
 
-.restaurant-image{
+.restaurant-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -65,55 +80,106 @@
     margin-bottom: 1rem;
 }
 
+/* Restaurant Menu cards */
+.menu-cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 40px;
+}
+.menu-detailed{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.img-container{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    /* border: 5px solid black; */
+}
+.img-container >img{
+    height: 300px;
+    width: 20rem;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
 /* Css for body */
-.body{
+.body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
-.res-container{
+
+.res-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
-.search{
+.res-container >a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.search {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
-.search> input{
+
+.search>input {
     padding: 5px 15px;
     margin: 2rem;
     width: 20rem;
     height: 2rem;
     border-radius: 3rem;
 }
-.search > span{
+
+.search>span {
     font-family: 'Courier New', Courier, monospace;
-    font-weight:bolder
+    font-weight: bolder
 }
-.search-btn{
+
+.search-btn {
     margin: 10px;
-    padding:10px;
+    padding: 10px;
     border-radius: 15px;
     background: #00000036;
     color: rgb(47, 24, 177);
 }
-.filter-btn{
+
+.filter-btn {
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
 }
-.filter-btn:hover{
+
+.filter-btn:hover {
     scale: 0.9;
 }
 
 /* Restaurant blank card */
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -121,7 +187,8 @@
     align-items: center;
     width: 100%;
 }
-.card-container{
+
+.card-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -129,7 +196,8 @@
     align-items: center;
     width: 100%;
 }
-.blank-restaurent-card{
+
+.blank-restaurent-card {
     border-radius: 10px;
     margin: 1rem;
     background-color: #d8d1d18f;
