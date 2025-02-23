@@ -55,3 +55,6 @@ import {Component} from "path"
    (We are not featching any page outside application)
 - Server Side Routing
    ( We are fetching the page outside the appliction like api call)
+
+# UseParam Hook
+- useParam (use for the extrating the id from route url)   it return the "resId"
