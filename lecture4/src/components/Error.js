@@ -7,6 +7,7 @@ const Error = () => {
     <div>
       <h1>Opps!!!!</h1>
       <h3>Something went wrong</h3>
+      <h3>Check your internet conection</h3>
     </div>
   );
 };

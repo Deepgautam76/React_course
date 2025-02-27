@@ -6,23 +6,14 @@ const Shimmerui = () => {
     <>
       <div className="container">
         <div className="search">
-          <button className="filter-btn">Filter Top reataurent</button>
+          <button className="filter-btn">Top Restaurant</button>
           <button className="filter-btn">Reset filter</button>
           <input type="text" placeholder="Search here food or reataurant" />
-          <span>Enter food or restaurant name </span>
         </div>
         <div className="card-container">
-          {arr.map((item, index) => {
+          {arr.map((item,index) => {
             return <div className="blank-restaurent-card" key={index}></div>;
           })}
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
-          <div className="blank-restaurent-card"></div>
         </div>
       </div>
     </>

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
-
-
 import RestaurantCart from "../components/RestaurantCart";
 import Shimmerui from "./Shimmerui";
 import { SWIGGY_API } from "../utils/constant";
@@ -12,8 +10,10 @@ const Body = () => {
   const [filterRestaurant, setFilterRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  // Use Effiect render after the page render
-  // Im using this first render the page then call the API for dynamic data
+  /**
+   * Use Effiect render after the whole page rendered
+   * Im using this first render the page then call the API for dynamic data
+   */
   useEffect(() => {
     fetchData();
   }, []);
@@ -29,19 +29,19 @@ const Body = () => {
       setRestaurantData(resCards);
       setFilterRestaurant(resCards);
     } catch (error) {
-      console.log("Error encounter:" + error);
+      console.log("Error encounter restaurant card fetching:" + error);
     }
   };
 
-  // Filter data based on the rating
+  // Filter restaurant card based on rating
   const filterData = () => {
-    const fil = restaurantData.filter(
-      (res) => res.card.card.info.avgRating > 4.1
+    const filtred = restaurantData.filter(
+      (res) => res?.card?.card?.info?.avgRating > 4.1
     );
-    setFilterRestaurant(fil);
+    setFilterRestaurant(filtred);
   };
 
-  // Reset filter
+  // Reset all filter that apply by user
   const reset = () => {
     setFilterRestaurant(restaurantData);
     console.log("reset clicked");
@@ -53,7 +53,7 @@ const Body = () => {
     <div className="body">
       <div className="search">
         <button className="filter-btn" onClick={filterData}>
-          Filter Top reataurent
+          Top Restaurant
         </button>
         <button className="filter-btn" onClick={reset}>
           Reset filter
@@ -63,20 +63,21 @@ const Body = () => {
           className="search-input"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          placeholder="Search here food or reataurant"
+          placeholder="Search foods"
         />
         <button
           className="search-btn"
           onClick={() => {
-            //Filter the restaurant crad based on the search text entered
-            //SearchText is the state which is holding the value of the search input
-            //Here I am filtering the data based on the search text
+            /**
+             * Filter the restaurant crad based on the search text entered
+             * SearchText is the state which is holding the value of the search input
+             * Here I am filtering the data based on the search text
+             */
             const filterRestaurantData = restaurantData.filter((res) =>
-              res.card.card.info.name
+              res?.card?.card?.info?.name
                 .toLowerCase()
                 .includes(searchText.toLowerCase())
             );
-            // console.log("filterRestaurantData :-", filterRestaurantData);
             if (filterRestaurantData.length != 0) {
               setFilterRestaurant(filterRestaurantData);
             }
@@ -85,7 +86,6 @@ const Body = () => {
         >
           Search
         </button>
-        <span>Enter food or restaurant name </span>
       </div>
       <div className="res-container">
         {filterRestaurant.map((item) => (
@@ -93,7 +93,10 @@ const Body = () => {
             key={item?.card?.card?.info?.id}
             to={`/restaurant/${item?.card?.card?.info?.id}`}
           >
-            <RestaurantCart cardData={item?.card?.card} />
+            <RestaurantCart
+              cardData={item?.card?.card}
+              key={item?.card?.card?.info}
+            />
           </NavLink>
         ))}
       </div>

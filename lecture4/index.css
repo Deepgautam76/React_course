@@ -204,3 +204,9 @@
     height: 20rem;
     width: 17rem;
 }
+
+/* menu card seprator */
+.card-seprator {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 80%;
+}

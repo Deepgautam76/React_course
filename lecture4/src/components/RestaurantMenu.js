@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { useParams } from "react-router";
 import Shimmerui from "./Shimmerui";
-import { CDN_URL} from "../utils/constant";
+import { CDN_URL } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {

@@ -58,3 +58,7 @@ import {Component} from "path"
 
 # UseParam Hook
 - useParam (use for the extrating the id from route url)   it return the "resId"
+
+
+
+# timeStamp= 1.07

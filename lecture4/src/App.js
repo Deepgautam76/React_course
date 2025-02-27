@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,15 +8,23 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router";
 import Contect from "./components/Contect";
 import RestaurantMenu from "./components/RestaurantMenu";
 
-// Main component
+// This component run inside RouterProvider components
 const App = () => {
   return (
     <div className="app">
       <Header />
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };
+
+/**
+ * lazy Loading (Dynamic loading)
+ * in this loading type component when load
+ * then that uses other wise not loaded
+ * (This is boost application performance)
+ */
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const appRouter = createBrowserRouter([
   {
@@ -32,16 +40,24 @@ const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path:"/contect",
-        element:<Contect />
+        path: "/contect",
+        element: <Contect />,
       },
       {
-        path:"/restaurant/:id",
-        element:<RestaurantMenu/>
-      }
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading component</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />,
+      },
     ],
-    errorElement: <Error />
-  }
+    errorElement: <Error />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
