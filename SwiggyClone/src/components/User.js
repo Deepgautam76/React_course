@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const User = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    timer=setInterval(()=>{
-      console.log("hello from set Interval");
-    },1000)
-
-    return () => {
-      //This is the clear the all the timeInterval
-      clearInterval(timer)
-      console.log("Component will unmount");
-    }
-  },[]);
-
+const User = ({ name, location }) => {
   return (
-    <div className="user-card">
-      <h2>Count : {count}</h2>
-      <h1>Name: Kamal deep</h1>
-      <h3>Location: Noida</h3>
+    <div
+      className="user-card"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        padding: "10px",
+        margin: "10px",
+        border: "2px solid black",
+        width: "15rem",
+      }}
+    >
+      <h1>Name: {name}</h1>
+      <h3>Location: {location}</h3>
       <h4>Contect: abc@gamil.com</h4>
     </div>
   );
