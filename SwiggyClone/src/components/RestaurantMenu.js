@@ -2,9 +2,7 @@ import React from "react";
 
 import { useParams } from "react-router";
 import Shimmerui from "./Shimmerui";
-import { CDN_URL } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
-import menuItem from "./menuItem";
 
 const RestaurantMenu = () => {
   const param = useParams();
@@ -22,8 +20,7 @@ const RestaurantMenu = () => {
             {item?.card?.card?.title}({item?.card?.card?.itemCards?.length})
           </div>
           <div className="menu-item">
-            {/* here is the build the menu item */}
-            <menuItem items={item?.card?.card?.itemCards} />
+            {/* Here we build the Dises */}
           </div>
         </div>
       ))}
