@@ -37,7 +37,6 @@ const RestaurantCart = (prop) => {
 
 export const withPromotedlevel = (RestaurantCart) => {
   return (props) => {
-    console.log("Prop from promoted:", { ...props });
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
         <label

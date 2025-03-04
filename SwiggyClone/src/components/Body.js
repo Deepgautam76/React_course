@@ -29,7 +29,6 @@ const Body = () => {
       const Data = await response.json();
       const restaurantCarts = Data?.data?.cards;
       const [card1, card2, card3, ...resCards] = restaurantCarts;
-      console.log(resCards);
       setRestaurantData(resCards);
       setFilterRestaurant(resCards);
     } catch (error) {
