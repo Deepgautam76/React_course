@@ -4,11 +4,6 @@ import { SWIGGY_API } from "./constant";
 const useRestaurant = () => {
   const [restaurantCard, setRestaurantCard] = useState([]);
 
-  /**
-   * Use Effiect render after the whole page rendered
-   * I'm using this for first render the page then
-   * Call the API for dynamic data
-   */
   useEffect(() => {
     fetchData();
   }, []);

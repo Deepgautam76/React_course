@@ -29,11 +29,9 @@ const RestaurantCart = (prop) => {
  * Higher order components
  * take the component in input and return and enhance them
  * also return the components
- * 
- * --- input - RestaurantCard ==> ReastaurantCardPromoted --- 
+ *
+ * --- input - RestaurantCard ==> ReastaurantCardPromoted ---
  */
-
-// 
 
 export const withPromotedlevel = (RestaurantCart) => {
   return (props) => {

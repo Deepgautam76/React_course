@@ -5,11 +5,11 @@ import Shimmerui from "./Shimmerui";
 import { SWIGGY_API } from "../utils/constant";
 
 const Body = () => {
-  //Local state variable
   const [restaurantData, setRestaurantData] = useState([]);
   const [filterRestaurant, setFilterRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  // Promoted level component object
   const PromotedLavel = withPromotedlevel(RestaurantCart);
 
   /**
