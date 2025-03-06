@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-     "url": "git+https://github.com/Deepgautam76/React_course.git"
+    "url": "git+https://github.com/Deepgautam76/React_course.git"
   },
   "keywords": [
     "Frontend",
@@ -19,10 +19,12 @@
   "author": "Kamal Deep",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.9",
     "parcel": "^2.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.2.0"
+    "react-router-dom": "^7.2.0",
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "process": "^0.11.10"
