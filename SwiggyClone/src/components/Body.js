@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
-import RestaurantCart, { withPromotedlevel } from "./RestaurantCart";
+import RestaurantCart, { withPromotedlevel } from "./restaurant/RestaurantCart";
 import Shimmerui from "./Shimmerui";
 import { SWIGGY_API } from "../utils/constant";
 
@@ -57,23 +57,29 @@ const Body = () => {
   return restaurantData.length === 0 ? (
     <Shimmerui />
   ) : (
-    <div className="body">
-      <div className="search">
-        <button className="filter-btn" onClick={filterData}>
+    <div className="container">
+      <div className="flex flex-wrap m-auto p-2  border-b-1 w-9/12">
+        <button
+          className="m-1 py-2 px-3 cursor-pointer bg-gray-400 border-0 rounded-xl hover:bg-gray-500"
+          onClick={filterData}
+        >
           Top Restaurant
         </button>
-        <button className="filter-btn" onClick={reset}>
+        <button
+          className="m-1 py-2 px-3 cursor-pointer bg-gray-400 border-0 rounded-xl hover:bg-gray-500"
+          onClick={reset}
+        >
           Reset filter
         </button>
         <input
           type="text"
-          className="search-input"
+          className="m-1 mx-3 py-2 px-3 cursor-pointer border-2 rounded-2xl"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           placeholder="Search foods"
         />
         <button
-          className="search-btn"
+          className="m-1 mx-3 py-2 px-3 cursor-pointer bg-blue-700 font-bold rounded-2xl hover:bg-blue-800"
           onClick={() => {
             /**
              * Filter the restaurant crad based on the search text entered
@@ -94,7 +100,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="res-container">
+      <div className="container flex w-9/12 m-auto p-2 flex-wrap">
         {filterRestaurant.map((item) => (
           <NavLink
             key={item?.card?.card?.info?.id}
