@@ -14,7 +14,7 @@ const User = ({ name, location }) => {
         width: "15rem",
       }}
     >
-      <h1>Name: {name}</h1>
+      <h1 className="text-xl">Name: {name}</h1>
       <h3>Location: {location}</h3>
       <h4>Contect: abc@gamil.com</h4>
     </div>
