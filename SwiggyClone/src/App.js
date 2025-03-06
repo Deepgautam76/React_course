@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Body from "./components/Body";
-import About from "./components/About";
-import Error from "./components/Error";
+import About from "./components/header/About";
+import Error from "./components/Errors/Error";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router";
-import Contect from "./components/Contect";
+import Contect from "./components/header/Contect";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 // This component run inside RouterProvider components
