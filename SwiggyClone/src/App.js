@@ -11,7 +11,7 @@ import RestaurantMenu from "./components/restaurant_menu/RestaurantMenu";
 // This component run inside RouterProvider components
 const App = () => {
   return (
-    <div className="app">
+    <div className="bg-gray-600 text-black">
       <Header />
       <Outlet />
     </div>

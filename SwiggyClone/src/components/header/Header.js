@@ -9,10 +9,10 @@ const Header = () => {
   const internetStatus = useOnlineStatus();
 
   return (
-    <div className="flex flex-wrap border-b-1 border-gray-500 justify-between items-center ">
-      <div className="flex items-center justify-center w-1/12  m-2 p-3">
+    <div className="container flex flex-wrap border-b-1 border-gray-500 justify-between items-center rounded-2xl m-auto">
+      <div className="flex items-center justify-center w-20  m-1 px-2 py-2 overflow-hidden">
         <img
-          className="flex justify-center items-center border-1 rounded-xl w-16"
+          className="flex justify-center items-center rounded-3xl"
           src={LOGO_URL}
           alt="Logo image"
         />

@@ -14,14 +14,7 @@ const useRestaurantMenu = (resId) => {
       const data = await response.json();
       const menu =
         data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-
-      /**  Filter the menuCard based on ItemCategory */
-      const filteredcard = menu.filter(
-        (item) =>
-          item?.card?.card?.["@type"] ===
-          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-      );
-      setResMenu(filteredcard);
+      setResMenu(menu);
     } catch (error) {
       console.log("Error encounter frome useRestaurantMenu:" + error);
     }

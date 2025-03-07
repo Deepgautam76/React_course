@@ -4,7 +4,7 @@ const RestaurantCart = (prop) => {
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } =
     prop?.cardData?.info;
   return (
-    <div className="m-3 w-3xs rounded-2xl overflow-hidden shadow-lg bg-white  hover:scale-95">
+    <div className="container m-1 my-2 w-3xs rounded-2xl overflow-hidden shadow-lg bg-gray-400  hover:scale-95">
       <div className="relative">
         <img
           src={CDN_URL + cloudinaryImageId}
@@ -17,8 +17,8 @@ const RestaurantCart = (prop) => {
           {name.length > 20 ? `${name.substring(0, 20)}...` : name}
         </h2>
         <h3>
-          {cuisines.length > 4
-            ? `${cuisines.splice(0, 4).join(",")}...`
+          {cuisines.length > 3
+            ? `${cuisines.splice(0, 3).join(",")}...`
             : cuisines.join(",")}
         </h3>
         <div className="flex items-center gap-2 mt-1">
@@ -45,12 +45,9 @@ export const withPromotedlevel = (RestaurantCart) => {
   return (props) => {
     return (
       <div>
-        <label
-          htmlFor="res"
-          className="absolute px-3 py-1 bg-amber-800 rounded-br-lg rounded-tr-lg rounded-tl-lg"
-        >
+        {/* <div className="absolute mx-3 px-2 py-1 bg-amber-800 rounded-br-lg rounded-tr-lg rounded-tl-lg">
           Promoted
-        </label>
+        </div> */}
         <div>
           <RestaurantCart className="res" {...props} />
         </div>

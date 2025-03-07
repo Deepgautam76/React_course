@@ -7,10 +7,10 @@ const Dishes = ({ items }) => {
         const { id, name, defaultPrice, price, ratings, description, imageId } =
           item?.card?.info || {};
         return (
-          <div key={id} className="flex m-auto py-2 border-b-1 w-8/12">
+          <div key={id} className="flex m-auto py-2 border-b-1 w-12/12">
             <div className="flex-1 w-10/12 px-2 ">
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-semibold text-gray-700">{name}</h2>
+                <h2 className="text-lg font-semibold text-gray-300">{name}</h2>
               </div>
               <p className="text-lg font-semibold mt-1">
                 ₹ {defaultPrice / 100 || price / 100}
@@ -22,7 +22,7 @@ const Dishes = ({ items }) => {
                     : null}
                 </span>
               </div>
-              <p className="text-gray-600 text-sm mt-2">{description} </p>
+              <p className="text-gray-300 text-sm mt-2">{description} </p>
             </div>
             <div className="relative w-2/12 h-28  rounded-lg overflow-hidden shadow-md">
               <img
@@ -30,8 +30,8 @@ const Dishes = ({ items }) => {
                 alt="Dishes-image"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-white text-center mx-1 py-1 rounded-t-lg shadow-md hover:bg-gray-300">
-                <button className="text-green-600 font-bold">ADD</button>
+              <div className="absolute bottom-0 left-0 right-0 bg-gray-400 text-center mx-1 py-1 rounded-t-lg shadow-md hover:bg-gray-500">
+                <button className="text-green-600 font-bold ">ADD</button>
               </div>
             </div>
           </div>

@@ -100,7 +100,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="container flex w-9/12 m-auto p-2 flex-wrap">
+      <div className="container flex w-9/12 m-auto flex-wrap">
         {filterRestaurant.map((item) => (
           <NavLink
             key={item?.card?.card?.info?.id}
