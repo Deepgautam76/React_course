@@ -1,9 +1,14 @@
-import { useState } from "react";
+import React from "react";
 import Dishes from "./Dishes";
 
-const RestaurantMenuCategory = ({ items }) => {
-  const [showDishes, setShowDishes] = useState(false);
+const RestaurantMenuCategory = ({ items, showItems, setShowIndex }) => {
   const { categoryId, title, itemCards } = items?.card?.card;
+
+  let preSetItem = showItems;
+  const handelClick = () => {
+    setShowIndex();
+  };
+
   return (
     <>
       <div
@@ -12,14 +17,14 @@ const RestaurantMenuCategory = ({ items }) => {
       >
         <div
           className="flex justify-between cursor-pointer m-auto p-2 w-12/12 hover:bg-gray-500 rounded-2xl"
-          onClick={() => setShowDishes(!showDishes)}
+          onClick={handelClick}
         >
           <span className="flex font-bold text-2xl">
             {title}({itemCards?.length})
           </span>
           <span className="rounded-md hover:bg-gray-300">🔻</span>
         </div>
-        <div>{showDishes && <Dishes items={itemCards} />}</div>
+        <div>{showItems && <Dishes items={itemCards} />}</div>
       </div>
     </>
   );

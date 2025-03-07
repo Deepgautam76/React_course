@@ -25,7 +25,7 @@ const RestaurantCart = (prop) => {
           <span className="text-green-600 text-lg font-bold">
             ★ {avgRating}
           </span>
-          <span className="text-gray-500 text-sm">• {sla?.slaString} </span>
+          <span className="text-gray-900 text-sm ">• {sla?.slaString} </span>
         </div>
         <h4>{costForTwo}</h4>
       </div>

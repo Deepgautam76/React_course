@@ -9,6 +9,8 @@ const RestaurantMenu = () => {
   const param = useParams();
   const resId = param.id;
 
+  const [showIndex, setShowIndex] = useState(null);
+
   /** Custom hooks for fetching the restaurant-menu data */
   const resMenu = useRestaurantMenu(resId);
   const filterCardByItemCategory = resMenu.filter(
@@ -25,11 +27,21 @@ const RestaurantMenu = () => {
     );
   return (
     <>
-      {filterCardByItemCategory.map((category) => (
+      {filterCardByItemCategory.map((category, index) => (
         <div
-        className="flex bg-gray-900 text-amber-50"
-          key={category?.card?.card?.categoryId}>
-          <RestaurantMenuCategory items={category} />
+          className="flex bg-gray-900 text-amber-50"
+          key={category?.card?.card?.categoryId}
+        >
+          <RestaurantMenuCategory
+            /**
+             * This component is cotrolled componet
+             * Becouse this component manage by the parent
+             * show that component are controlled component
+             */
+            items={category}
+            showItems={index === showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
+          />
         </div>
       ))}
     </>
