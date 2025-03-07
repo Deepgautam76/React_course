@@ -3,19 +3,18 @@ import { CDN_URL } from "../../utils/constant";
 const RestaurantCart = (prop) => {
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } =
     prop?.cardData?.info;
-  console.log(sla);
   return (
-    <div className="m-1 w-3xs rounded-2xl overflow-hidden shadow-lg bg-white  hover:scale-95">
+    <div className="m-3 w-3xs rounded-2xl overflow-hidden shadow-lg bg-white  hover:scale-95">
       <div className="relative">
         <img
           src={CDN_URL + cloudinaryImageId}
           alt="Food Image"
-          className="w-full h-40 object-cover"
+          className="w-full h-40 object-cover rounded-2xl"
         />
       </div>
       <div className="p-4">
         <h2 className="text-lg font-semibold">
-          {name.length > 25 ? `${name.substring(0, 25)}...` : name}
+          {name.length > 20 ? `${name.substring(0, 20)}...` : name}
         </h2>
         <h3>
           {cuisines.length > 4

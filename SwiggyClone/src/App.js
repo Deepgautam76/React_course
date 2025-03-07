@@ -6,7 +6,7 @@ import About from "./components/header/About";
 import Error from "./components/Errors/Error";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router";
 import Contect from "./components/header/Contect";
-import RestaurantMenu from "./components/RestaurantMenu";
+import RestaurantMenu from "./components/restaurant_menu/RestaurantMenu";
 
 // This component run inside RouterProvider components
 const App = () => {

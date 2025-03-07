@@ -55,7 +55,7 @@ const Body = () => {
   };
 
   return restaurantData.length === 0 ? (
-    <Shimmerui />
+    <Shimmerui/>
   ) : (
     <div className="container">
       <div className="flex flex-wrap m-auto p-2  border-b-1 w-9/12">
