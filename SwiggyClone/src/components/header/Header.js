@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router";
 
 import { LOGO_URL } from "../../utils/constant";
@@ -9,15 +9,17 @@ const Header = () => {
   const internetStatus = useOnlineStatus();
 
   return (
-    <div className="container flex flex-wrap border-b-1 border-gray-500 justify-between items-center rounded-2xl m-auto">
+    <div className="container flex flex-wrap border-b-1 border-gray-500 justify-between items-center border-1 rounded-2xl m-auto">
       <div className="flex items-center justify-center w-20  m-1 px-2 py-2 overflow-hidden">
-        <img
-          className="flex justify-center items-center rounded-3xl"
-          src={LOGO_URL}
-          alt="Logo image"
-        />
+        <NavLink to="/">
+          <img
+            className="flex justify-center items-center rounded-3xl hover:scale-105"
+            src={LOGO_URL}
+            alt="Logo image"
+          />
+        </NavLink>
       </div>
-      <div className="flex items-center justify-center flex-wrap" >
+      <div className="flex items-center justify-center flex-wrap">
         <ul className="flex m-2 p-1 flex-wrap">
           <li className="m-2 px-1 cursor-pointer hover:bg-gray-200 border-0 rounded-md">
             {internetStatus ? "online🟢" : "offline🔴"}
