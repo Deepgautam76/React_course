@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router";
+import { useSelector } from "react-redux";
 
 import { LOGO_URL } from "../../utils/constant";
 import useOnlineStatus from "../../utils/useOnlineStatus";
@@ -7,6 +8,13 @@ import useOnlineStatus from "../../utils/useOnlineStatus";
 const Header = () => {
   const [Login, setLogin] = useState("Login");
   const internetStatus = useOnlineStatus();
+
+  /**
+   * Use the useSelctor hook for subscribing the store
+   * for reding the data from the store
+   * */
+  const cartItems = useSelector((store) => store?.cart?.items);
+  console.log(cartItems);
 
   return (
     <div className="container flex flex-wrap border-b-1 border-gray-500 justify-between items-center border-1 rounded-2xl m-auto">
@@ -36,8 +44,8 @@ const Header = () => {
           <li className="m-2 px-1 cursor-pointer  hover:bg-gray-200 border-0 rounded-md">
             <NavLink to="/grocery">Grocery</NavLink>
           </li>
-          <li className="m-2 px-1 cursor-pointer  hover:bg-gray-200 border-0 rounded-md ">
-            Cart
+          <li className="m-2 px-1 cursor-pointer  hover:bg-gray-200 border-0 rounded-md text-xl ">
+            <NavLink to="/cart"> Cart ({cartItems.length} items)</NavLink>
           </li>
         </ul>
         <button
