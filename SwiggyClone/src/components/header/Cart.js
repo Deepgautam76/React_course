@@ -8,10 +8,10 @@ const Cart = () => {
   const dipacher = useDispatch();
 
   return (
-    <div className="w-6/12 m-auto">
-      <div>
+    <div className="w-10/12 m-auto border-2">
+      <div className="flex items-center justify-center border-2 my-2">
         <button
-          className="bg-green-500 m-2 p-2"
+          className="bg-green-500 m-2 px-2 py-1 rounded-xl"
           onClick={() => dipacher(clearCart)}
         >
           Clear cart
