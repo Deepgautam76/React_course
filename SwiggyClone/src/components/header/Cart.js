@@ -1,12 +1,25 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Dishes from "../restaurant_menu/Dishes";
+import { clearCart } from "../../redux_store/cartSlice";
 
 const Cart = () => {
   const cartItem = useSelector((store) => store?.cart?.items);
+  const dipacher = useDispatch();
+
   return (
-    <div className="flex flex-wrap  w-9/12 m-auto  ">
-      <Dishes items={cartItem} />
+    <div className="w-6/12 m-auto">
+      <div>
+        <button
+          className="bg-green-500 m-2 p-2"
+          onClick={() => dipacher(clearCart)}
+        >
+          Clear cart
+        </button>
+      </div>
+      <div>
+        <Dishes items={cartItem} />
+      </div>
     </div>
   );
 };
