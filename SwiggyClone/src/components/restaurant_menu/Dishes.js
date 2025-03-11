@@ -4,6 +4,7 @@ import { addItem } from "../../redux_store/cartSlice";
 import { CDN_URL } from "../../utils/constant";
 
 const Dishes = ({ items }) => {
+  
   const dispatch = useDispatch();
 
   const handleAdd = (item) => {
