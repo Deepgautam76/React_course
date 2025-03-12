@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router";
 import { useSelector } from "react-redux";
+import { FiShoppingCart } from "react-icons/fi";
 
 import { LOGO_URL } from "../../utils/constant";
 import useOnlineStatus from "../../utils/useOnlineStatus";
@@ -28,7 +29,7 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="flex items-center justify-center flex-wrap">
-        <ul className="flex m-2 p-1 flex-wrap">
+        <ul className="flex m-2 p-2 flex-wrap items-center ">
           <li className="m-2 px-1 cursor-pointer hover:bg-gray-200 border-0 rounded-md">
             {internetStatus ? "online🟢" : "offline🔴"}
           </li>
@@ -45,11 +46,21 @@ const Header = () => {
             <NavLink to="/grocery">Grocery</NavLink>
           </li>
           <li className="m-2 px-1 cursor-pointer  hover:bg-gray-200 border-0 rounded-md text-xl ">
-            <NavLink to="/cart"> Cart ({cartItems.length} items)</NavLink>
+            <NavLink to="/cart">
+              <div className="relative inline-flex items-center rounded-lg cursor-pointer">
+                <FiShoppingCart className="text-3xl p-1" />
+                <span>Cart</span>
+                {cartItems.length > 0 && (
+                  <span className="absolute -top-1 -left-1 bg-green-400  text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full ">
+                    {cartItems.length}
+                  </span>
+                )}
+              </div>
+            </NavLink>
           </li>
         </ul>
         <button
-          className="flex justify-center items-center m-2 px-2 rounded-xl bg-blue-500 font-bold"
+          className="flex justify-center items-center m-2 px-3 py-1 rounded-xl bg-blue-500 font-bold hover:bg-blue-600"
           onClick={() => {
             Login === "Login" ? setLogin("Logout") : setLogin("Login");
           }}
