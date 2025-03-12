@@ -13,7 +13,9 @@ const RestaurantMenu = () => {
 
   /** Custom hooks for fetching the restaurant-menu data */
   const resMenu = useRestaurantMenu(resId);
-  const filterCardByItemCategory = resMenu.filter(
+  const Menu =
+    resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const filterCardByItemCategory = Menu?.filter(
     (item) =>
       item?.card?.card?.["@type"] ===
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
@@ -26,7 +28,10 @@ const RestaurantMenu = () => {
       </div>
     );
   return (
-    <>
+    <div>
+      <div className="flex m-auto w-8/12 my-4 text-2xl font-bold border-0 p-2">
+        {resMenu?.data?.cards[2]?.card?.card?.info?.name}
+      </div>
       {filterCardByItemCategory.map((category, index) => (
         <div
           className="flex bg-gray-900 text-amber-50"
@@ -44,7 +49,7 @@ const RestaurantMenu = () => {
           />
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

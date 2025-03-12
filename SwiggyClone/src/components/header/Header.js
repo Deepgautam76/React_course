@@ -15,7 +15,6 @@ const Header = () => {
    * for reding the data from the store
    * */
   const cartItems = useSelector((store) => store?.cart?.items);
-  console.log(cartItems);
 
   return (
     <div className="container flex flex-wrap border-b-1 border-gray-500 justify-between items-center border-1 rounded-2xl m-auto">
