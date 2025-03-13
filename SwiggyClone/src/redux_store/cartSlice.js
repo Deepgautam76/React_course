@@ -15,10 +15,12 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.items.length = 0;
+      // // if you do this, thats also work fine
+      // return { items: [] };
     },
   },
 });
 
-export const { addItem, removeItem,clearCart } = cartSlice.actions;
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
