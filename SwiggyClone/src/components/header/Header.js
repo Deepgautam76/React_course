@@ -30,7 +30,7 @@ const Header = () => {
       <div className="flex items-center justify-center flex-wrap">
         <ul className="flex m-2 p-2 flex-wrap items-center ">
           <li className="m-2 px-1 cursor-pointer hover:bg-gray-200 border-0 rounded-md">
-            {internetStatus ? "online🟢" : "offline🔴"}
+            {internetStatus ? "Live🟢" : "Offline🔴"}
           </li>
           <li className="m-2 px-1 cursor-pointer  hover:bg-gray-200 border-0 rounded-md">
             <NavLink to="/">Home</NavLink>
