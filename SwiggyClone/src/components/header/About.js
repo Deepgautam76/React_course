@@ -2,9 +2,13 @@ import React from "react";
 import User from "./User";
 const About = () => {
   return (
-    <div className="h-lvh flex mx-6 my-8 ">
-      <div className="flex flex-col">
-        <h3 className="text-3xl font-semibold">It's build by the developer Kamal Deep</h3>
+    <div className="h-lvh flex flex-col m-4 min-h-screen">
+      <div className="flex flex-col px-8 ">
+        <h3 className="text-3xl font-semibold text-green-400">
+          It's build by the developer Kamal Deep
+        </h3>
+      </div>
+      <div>
         <User location="Noida (NCR)" />
       </div>
     </div>
