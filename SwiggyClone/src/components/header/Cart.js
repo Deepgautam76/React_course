@@ -15,13 +15,13 @@ const Cart = () => {
           className="bg-green-500 m-2 px-2 py-1 rounded-xl hover:bg-green-600"
           onClick={() => dipacher(clearCart())}
         >
-          Clear cart
+          Clear
         </button>
         <button
           className="bg-green-500 m-2 px-2 py-1 rounded-xl hover:bg-green-600"
           onClick={() => dipacher(removeItem())}
         >
-          Remove Item
+          Remove
         </button>
       </div>
       <div>

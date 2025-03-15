@@ -14,10 +14,10 @@ const DummyCart = () => {
           Missing Cart items?
         </h2>
         <p className="text-gray-600 text-center mt-1 mb-4">
-          Login to see the items you added previously
+         Currently your card empty, add items
         </p>
         <button className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600">
-          <NavLink to="/"> Longin</NavLink>
+          <NavLink to="/">Login</NavLink>
         </button>
       </div>
     </div>
