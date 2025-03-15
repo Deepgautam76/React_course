@@ -2,13 +2,11 @@ import React from "react";
 
 const Contect = () => {
   return (
-    <div>
-      <h1>Contect Information</h1>
-      <ul>
-        <li>Deep Gautam</li>
-        <li>deep@gmail.com</li>
-        <li>+91-7348463150</li>
-      </ul>
+    <div className="container flex flex-col items-center my-4 ">
+      <h1 className="font-semibold text-3xl">Contect Information</h1>
+      <h3 className="font-semibold text-xl">Kamal Deep </h3>
+      <h3>deepgautam209738@gmail.com</h3>
+      <h3>+917348463150</h3>
     </div>
   );
 };
