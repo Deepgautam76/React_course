@@ -41,7 +41,7 @@ const Body = () => {
    */
   const filterData = () => {
     const filtred = restaurantData.filter(
-      (res) => res?.card?.card?.info?.avgRating > 4.1
+      (res) => res?.card?.card?.info?.avgRating > 3.9
     );
     setFilterRestaurant(filtred);
   };
@@ -51,11 +51,10 @@ const Body = () => {
    */
   const reset = () => {
     setFilterRestaurant(restaurantData);
-    console.log("reset clicked");
   };
 
   return restaurantData.length === 0 ? (
-    <Shimmerui/>
+    <Shimmerui />
   ) : (
     <div className="container">
       <div className="flex flex-wrap m-auto p-2  border-b-1 w-9/12">
@@ -63,7 +62,7 @@ const Body = () => {
           className="m-1 py-2 px-3 cursor-pointer bg-gray-400 border-0 rounded-xl hover:bg-gray-500"
           onClick={filterData}
         >
-          Top Restaurant
+          Top Rated
         </button>
         <button
           className="m-1 py-2 px-3 cursor-pointer bg-gray-400 border-0 rounded-xl hover:bg-gray-500"
