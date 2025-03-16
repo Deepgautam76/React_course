@@ -14,7 +14,6 @@ const useRestaurant = () => {
       const Data = await response.json();
       const restaurantCarts = Data?.data?.cards;
       const [card1, card2, card3, ...resCards] = restaurantCarts;
-      console.log(resCards);
       setRestaurantCard(resCards);
     } catch (error) {
       console.log("Error encounter form restaurant card fetching:" + error);
