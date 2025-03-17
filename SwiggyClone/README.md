@@ -75,19 +75,38 @@ import {Component} from "path"
 
 - It create the central data store that called the "Context Provider"
   (And we receive the data any where that part called the "Context Cunsumer)
+
 # Redux tool kit(RTK)
+
 - Install @reduxjs/toolkit and react-redux
+
   - Build our store(Redux store)
   - Build slice(cardSlice)
   - Connect our store to our App
     "Store have tha multiple component that called the slice of the strore (actualy the that are component)"
 
   - If we want update the store follow these steps
-    1- Fist happend the action (like click) 
-    2- This action goes into dispatcher(action) 
+    1- Fist happend the action (like click)
+    2- This action goes into dispatcher(action)
     3- After this reducer function update slice
   - If we want read the data frome store
     1- First subscribe the store
     2- read the the data using "selector"
-    3- after update the UI   
+    3- after update the UI
+
+# Types of testing (developer)
+  - Unit testing
+  - Integration testing
+  - End to End Testing -e2e testing
+
+# Setting up Testing in our app
+
+  - Install React Testing Library
+  - Installed jest
+  - Installed Babel dependencies
+  - Configure Babel
+  - Configure Parcel Config file to disable default babel transpilation(becouse i want to use balel.config.js not default one)
+  - Jest configure file (npx jest --init)
+  - Install jsdom library
+  - Create __tests__ folder for writing the testcase
 
