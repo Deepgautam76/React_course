@@ -11,7 +11,6 @@ import Contect from "./components/header/Contect";
 import RestaurantMenu from "./components/restaurant_menu/RestaurantMenu";
 import appStore from "./redux_store/appStore";
 import Cart from "./components/header/Cart";
-
 // This component run inside RouterProvider components
 const App = () => {
   return (
