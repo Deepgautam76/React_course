@@ -109,4 +109,7 @@ import {Component} from "path"
   - Jest configure file (npx jest --init)
   - Install jsdom library
   - Create __tests__ folder for writing the testcase
+  - Install @babel/preset-react to make JSX work in text cases
+  - Include @babel/preset-react inside my babel config
+  - Install @testing-liberary/jest-dom
 
