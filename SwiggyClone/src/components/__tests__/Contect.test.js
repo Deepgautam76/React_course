@@ -10,13 +10,14 @@ import Contect from "../header/Contect";
  */
 
 describe("Contect Component", () => {
+
   test("should load heading", () => {
     render(<Contect />);
     const heading = screen.getByRole("heading");
     //Assertion
     expect(heading).toBeInTheDocument();
   });
-  
+
   // You can also write testcases unsing it() function
   it("should load heading", () => {
     render(<Contect />);
