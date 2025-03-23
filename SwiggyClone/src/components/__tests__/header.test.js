@@ -1,26 +1,24 @@
 import React from "react";
-import { render, screen } from "@testing-library/dom";
-import { BrowserRouter, NavLink } from "react-router";
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "../../redux_store/appStore";
 import Header from "../header/Header";
-
 import "@testing-library/jest-dom";
 
-describe("All testcase for header component", () => {
-  test("should we header login logout button", () => {
+describe("All test cases for Header component", () => {
+  test("should render header login/logout button", () => {
     render(
-      <BrowserRouter>
-        <NavLink>
-          <Provider store={appStore}>
-            <Header />
-          </Provider>
-        </NavLink>
-      </BrowserRouter>
+      <MemoryRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </MemoryRouter>
     );
 
-    const loginbutton = screen.getByRole("button");
-    //Assert
+    const loginbutton = screen.getByRole("button"); 
+    // Ensure correct role
     expect(loginbutton).toBeInTheDocument();
   });
 });
+
