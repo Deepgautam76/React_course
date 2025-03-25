@@ -5,6 +5,7 @@
   "source": "index.js",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watch",
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
