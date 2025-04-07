@@ -45,9 +45,9 @@ export const withPromotedlevel = (RestaurantCart) => {
   return (props) => {
     return (
       <div>
-        {/* <div className="absolute mx-3 px-2 py-1 bg-amber-800 rounded-br-lg rounded-tr-lg rounded-tl-lg">
+        <div className="absolute mx-3 px-2 py-1 bg-amber-800 rounded-br-lg rounded-tr-lg rounded-tl-lg">
           Promoted
-        </div> */}
+        </div>
         <div>
           <RestaurantCart className="res" {...props} />
         </div>
