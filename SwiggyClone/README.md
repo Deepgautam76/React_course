@@ -112,4 +112,5 @@ import {Component} from "path"
   - Install @babel/preset-react to make JSX work in text cases
   - Include @babel/preset-react inside my babel config
   - Install @testing-liberary/jest-dom
+  - Add the infinite scrolling  for loading the restaurant card
 
